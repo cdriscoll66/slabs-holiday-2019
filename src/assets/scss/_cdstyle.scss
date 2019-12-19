@@ -1,0 +1,145 @@
+
+.intro {
+	background-color:$white;
+	padding:50px 50px 100px;
+
+
+}
+
+.titlesection {
+	display:flex;
+	flex-direction:column;
+	.slab-tag {
+		font-weight:bold;
+	}
+	.sec-grow {
+		flex-grow:1;
+		border-left:1px solid black;
+		margin:20px 0;
+	}
+}
+
+.headsection {
+	background-image:url('../img/dots1.svg'), url('../img/dots2.svg'), url('../img/dots3.svg'), url('../img/dots4.svg'), ;
+	background-size: 850px, 20%, 40%, 30%;
+	background-position: 130% -350px, 25% 40%, 80% 75%, -10% 111%;
+	background-repeat:no-repeat;
+	overflow-x:hidden;
+	@include breakpoint(xlarge down){
+	background-position: 180% -350px, 25% 40%, 80% 75%, -10% 111%;
+	}
+	@include breakpoint(large down){
+		background-position: 200% -350px, 25% 40%, 80% 75%, -10% 111%;
+		background-size: 70%, 20%, 50%, 35%;
+		}
+	@include breakpoint(medium down){
+		background-position: 160% -350px, 25% 33%, 80% 65%, -10% 110%;
+		background-size: 70%, 30%, 60%, 50%;
+}
+	@include breakpoint(small down){
+		background-position: 130% -350px, 25% 25%, 80% 55%, -10% 110%;
+		background-size: 70%, 30%, 70%, 65%;
+	}
+}
+
+.grid-container {
+	max-width:85rem;
+}
+
+.head {
+	margin:10px 0;
+	ul{
+		list-style:none;
+	li {
+		line-height:1.2;
+		margin-top: 15px;
+	}
+	}
+}
+h1 {
+	line-height:.8;
+	@include breakpoint(medium){// font-size:6rem;
+	letter-spacing:-2px;
+	padding:10px 0;
+}
+
+}
+
+p {
+	font-size: 1.2rem;
+	line-height: 1.3;
+}
+
+:focus {
+	outline:none;
+}
+
+
+a{
+	color:$black;
+	&:hover {
+		color:$medium-gray;
+	}
+}
+
+.rapboard {
+	// display:flex;
+	// flex-wrap:wrap;
+	// justify-content: space-around;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(168px, 1fr));
+
+	margin-top:50px;
+.rapper {
+	width:168px;
+	margin-bottom:30px;
+	cursor: pointer;
+	img {
+	max-height:160px;
+	display:block;
+	margin:0 auto;
+    filter: grayscale(100%) sepia(30%) brightness(94%) drop-shadow(2px 3px 3px rgba(0,0,0,0.5));
+		transition: filter 0.5s;
+		&:hover {
+			filter: grayscale(0%) drop-shadow(1px 1px 1px rgba(0,0,0,0.5));
+		}
+	}
+}
+}
+
+.tall {
+	.rapper {
+		margin-bottom:0;
+		img {
+		max-height:190px;
+	}
+}
+}
+
+.footer {
+	position: fixed;
+	bottom:20px;
+	right:20px;
+	text-align:right;
+.cell {
+	padding:0;
+}
+
+}
+
+.tooltip {
+	font-weight: 700;
+}
+
+@keyframes wiggle {
+	25%  { transform: translateX(4px) rotate(5deg);  }
+	75%  { transform: translateX(-4px) rotate(-5deg); }
+	100% { transform: translateX(0) rotate(0deg)  }
+  }
+
+
+  .shimmy:hover {
+	animation: wiggle 1s linear infinite;
+  }
+
